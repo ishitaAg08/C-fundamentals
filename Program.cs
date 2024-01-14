@@ -1,4 +1,4 @@
-﻿using System;
+﻿using C_;
 
 namespace Csharp
 {
@@ -7,6 +7,7 @@ namespace Csharp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World");
+            Delegates.UseDelegates();
         }
     }
 }
