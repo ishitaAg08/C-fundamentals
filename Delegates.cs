@@ -25,7 +25,7 @@ namespace C_
             // use lambda expressions - based on delegates
             // At runtime, this expression creates a delegate and point to the function
             // x is an employee object at runtime.
-            Employee.PromoteEmployeeWithDelegate(employeeList, x => x.Experience >= 5);
+            Employee.PromoteEmployeeWithLambdaExpression(employeeList, x => x.Experience >= 5);
 
         }
 
@@ -70,6 +70,18 @@ namespace C_
         public static void PromoteEmployeeWithDelegate(List<Employee> employees, IsPromotable IsEligibleToPromote)
         {
             Console.WriteLine("With delegate:");
+            foreach (Employee emp in employees)
+            {
+                if (IsEligibleToPromote(emp))
+                {
+                    Console.WriteLine(emp.Name + " promoted");
+                }
+            }
+        }
+
+        public static void PromoteEmployeeWithLambdaExpression(List<Employee> employees, IsPromotable IsEligibleToPromote)
+        {
+            Console.WriteLine("With Lambda expression:");
             foreach (Employee emp in employees)
             {
                 if (IsEligibleToPromote(emp))
